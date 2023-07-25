@@ -27,4 +27,4 @@ class FlowersRepository:
     def save(self, flower: Flower):
         flower.id = len(self.flowers) + 1
         self.flowers.append(flower)
-    
+        return flower
