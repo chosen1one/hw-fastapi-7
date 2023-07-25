@@ -1,0 +1,10 @@
+<p>Cart:</p>
+<div>
+    {% for item in cart %}
+        <li> {{ item.id }} {{ item.name }} {{ item.cost }} </li>
+    {% endfor %}
+
+    <p>Total Price: {{ total }}</p>
+
+    <a href="/flowers">Flowers</a>
+</div>

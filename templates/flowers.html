@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Flowers</title>
+</head>
+<body>
+    <p>Add a flower</p>
+    <form action="/flowers" method="post">
+        <p>Name</p>
+        <input type="text" name="name">
+        <p>Count</p>
+        <input type="number" name="count">
+        <p>Cost</p>
+        <input type="number" name="cost">
+
+        <input type="submit" value="submit">
+    </form>
+
+    <div>
+        <p>All Flowers:</p>
+        {% for flower in flowers %}
+        <ul>
+            <li>
+                {{ flower.name }} {{ flower.count }} {{ flower.cost }}
+                <form action="/cart/items" method="post">
+                    <input type="hidden" name="flower_id" value="{{flower.id}}">
+                    <input type="submit" value="submit">
+                </form>
+            </li>    
+        </ul>
+        {% endfor %}
+    </div>
+    <br>
+    <a href="/cart/items">Cart</a>
+</body>
+</html>
+
